@@ -118,4 +118,51 @@ Implement various DFS operations:
 - Parses and executes the appropriate command function
 
 This client provides a command-line interface for users to interact with the distributed file system, translating user commands into API calls to the Master Node and Data Nodes as needed.
+Step 1: Start the Master Node
 
+Open a terminal window
+Navigate to the directory containing your project files
+Start the master node by running:
+Copypython master_node.py
+
+
+Step 2: Start Data Nodes
+You need to start at least one data node, but you can start multiple for redundancy.
+
+Open a new terminal window for each data node
+Navigate to the project directory
+Start each data node by running:
+Copypython datanode.py
+Note: The code already sets up default values for environment variables, so you don't need to set them manually unless you want to override the defaults.
+
+Step 3: Start the Client
+
+Open another terminal window
+Navigate to the project directory
+Start the client by running:
+Copypython combined_client.py
+
+
+Step 4: Initialize the File System
+
+In the client terminal, type the following command:
+Copyinit
+This will initialize the distributed file system.
+You can now use various commands like ls, mkdir, put, get, etc., to interact with your DFS.
+init
+status
+mkdir /test_dir
+cd /test_dir
+put local_file.txt remote_file.txt
+ls
+get remote_file.txt downloaded_file.txt
+cp remote_file.txt copy_file.txt
+ls
+mv copy_file.txt /moved_file.txt
+ls
+ls /
+rm remote_file.txt
+ls
+cd /
+rm /test_dir
+status
